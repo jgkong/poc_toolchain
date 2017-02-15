@@ -23,6 +23,7 @@ service2:
         CF_SPACE: "{{deploy.parameters.dev-space}}"
         CF_ORGANIZATION: "{{deploy.parameters.dev-organization}}"
         CF_REGION_ID: "{{deploy.parameters.dev-region}}"
+    services: ["service7", "service4"]
   service_id: pipeline
   hidden: [form, description]
 service3:
