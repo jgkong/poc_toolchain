@@ -1,30 +1,8 @@
 version: 0.6
 description: "This toolchain include tools for PoC"
 name: DevOps_PoC_1_XXX
-service0:
-  service_id: draservicebroker
-service1:
-  parameters:
-    api_token: 'https://hooks.slack.com/services/ABCDE'
-    channel_name: xxx
-    label: '#xxx'
-  service_id: slack
-service2:
-  parameters:
-    configuration: null
-    name: DevOps_PoC_1_XXX
-    services: null
-    ui-pipeline: null
-    configuration:
-      content: $file(pipeline.yml)
-      env:
-        REPO: "repo"
-        CF_APP: "{{deploy.parameters.app-name}}"
-        CF_SPACE: "{{deploy.parameters.dev-space}}"
-        CF_ORGANIZATION: "{{deploy.parameters.dev-organization}}"
-        CF_REGION_ID: "{{deploy.parameters.dev-region}}"
-  service_id: pipeline
 service3:
+  parameters: {}
   service_id: apm
 service4:
   parameters:
