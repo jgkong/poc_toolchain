@@ -33,34 +33,3 @@ service4:
     label: changeme
     username: changeme
   service_id: saucelabs
-service5:
-  service_id: orion
-service6:
-  parameters:
-    api_key: "changeme"
-    label: xxx
-    service_id: "changeme"
-    service_key: "changeme"
-    service_name: xxx
-    user_email: ""
-    user_phone: "changeme"
-  service_id: pagerduty
-service7:
-  parameters:
-    api_root_url: https://api.github.com
-    has_issues: true
-    label: DevOps_PoC_1_XXX
-    owner_id: XXX-DEV1
-    repo_name: DevOps_PoC_1_XXX
-    repo_url: https://github.com/XXX-DEV1/DevOps_PoC_1_XXX.git
-    type: clone
-  service_id: githubpublic
-
-#Deployment
-deploy:
-  service-category: pipeline
-  parameters:
-    dev-region: "{{region}}"
-    dev-organization: "{{organization}}"
-    dev-space: "dev"
-    app-name: "devops_poc_1_xxx_cf"
