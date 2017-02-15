@@ -34,6 +34,8 @@ service4:
     label: changeme
     username: changeme
   service_id: saucelabs
+service5:
+  service_id: orion
 service6:
   parameters:
     api_key: "changeme"
@@ -52,7 +54,7 @@ service7:
     owner_id: XXX-DEV1
     repo_name: DevOps_PoC_1_XXX
     repo_url: https://github.com/XXX-DEV1/DevOps_PoC_1_XXX.git
-    type: clone
+    type: link
   service_id: githubpublic
 
 #Deployment
