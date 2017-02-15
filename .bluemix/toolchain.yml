@@ -12,8 +12,7 @@ service1:
 service2:
   parameters:
     name: DevOps_PoC_1_XXX
-    services: null
-    ui-pipeline: null
+    ui-pipeline: true
     configuration:
       content: $file(pipeline.yml)
       env:
