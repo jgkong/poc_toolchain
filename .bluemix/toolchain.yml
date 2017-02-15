@@ -3,7 +3,6 @@ description: "This toolchain include tools for PoC"
 name: DevOps_PoC_1_XXX
 service0:
   service_id: draservicebroker
-  parameters:
 service1:
   parameters:
     api_token: 'https://hooks.slack.com/services/ABCDE'
@@ -34,6 +33,8 @@ service4:
     label: changeme
     username: changeme
   service_id: saucelabs
+service5:
+  service_id: orion
 service6:
   parameters:
     api_key: "changeme"
@@ -52,7 +53,7 @@ service7:
     owner_id: XXX-DEV1
     repo_name: DevOps_PoC_1_XXX
     repo_url: https://github.com/XXX-DEV1/DevOps_PoC_1_XXX.git
-    type: link
+    type: clone
   service_id: githubpublic
 
 #Deployment
