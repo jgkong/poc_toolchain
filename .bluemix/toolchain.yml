@@ -1,53 +1,66 @@
----
-default_locale: en
-locales: 
-  $ref: locales.yml
-name: "IaaS Delivery Toolchain"
-description: "This toolchain includes tools to develop and deploy your app. Depending on your app, when you create the toolchain, the GitHub repository will either be empty or will contain source code from your app.\n\nThis toolchain uses tools that are part of the Continuous Delivery service. If an instance of that service isn't already in your organization, when you click **Create**, it is automatically added at no cost to you. For more information and terms, see the [Bluemix catalog](/catalog/services/continuous-delivery/).\n\nTo get started, click **Create**."
-version: 0.5
-required: 
- - deploy
- - repo
-
-# Github repos
-repo:
-  service_id: githubpublic
+version: 0.6
+description: "This toolchain include tools for PoC"
+name: DevOps_PoC_1_XXX
+service0:
+  service_id: draservicebroker
+service1:
   parameters:
-    repo_name: "Sample project"
-    repo_url: "https://github.com/jkkim-infrasoft/sample-project"
-    type: clone
-    has_issues: false
-
-# Pipelines
-build:
+    api_token: 'https://hooks.slack.com/services/ABCDE'
+    channel_name: xxx
+    label: '#xxx'
+  service_id: slack
+service2:
+  parameters:
+    configuration: null
+    name: DevOps_PoC_1_XXX
+    services: null
+    ui-pipeline: null
+    configuration:
+      content: $file(pipeline.yml)
+      env:
+        REPO: "repo"
+        CF_APP: "{{deploy.parameters.app-name}}"
+        CF_SPACE: "{{deploy.parameters.dev-space}}"
+        CF_ORGANIZATION: "{{deploy.parameters.dev-organization}}"
+        CF_REGION_ID: "{{deploy.parameters.dev-region}}"
   service_id: pipeline
+service3:
+  parameters: {}
+  service_id: apm
+service4:
   parameters:
-    name: "{{name}}"
-    ui-pipeline: true
-    configuration: 
-     content: $file(pipeline.yml)
-     env:
-      REPO: "repo"
-      CF_APP: "{{deploy.parameters.app-name}}"
-      CF_SPACE: "{{deploy.parameters.dev-space}}"
-      CF_ORGANIZATION: "{{deploy.parameters.dev-organization}}"
-      CF_REGION_ID: "{{deploy.parameters.dev-region}}"
-     execute: true
-    services: ["repo"]
-  hidden: ["form"]
-    
-
-#Web IDE
-webide:
+    key: aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+    label: changeme
+    username: changeme
+  service_id: saucelabs
+service5:
   service_id: orion
-  
+service6:
+  parameters:
+    api_key: "changeme"
+    label: xxx
+    service_id: "changeme"
+    service_key: "changeme"
+    service_name: xxx
+    user_email: ""
+    user_phone: "changeme"
+  service_id: pagerduty
+service7:
+  parameters:
+    api_root_url: https://api.github.com
+    has_issues: true
+    label: DevOps_PoC_1_XXX
+    owner_id: XXX-DEV1
+    repo_name: DevOps_PoC_1_XXX
+    repo_url: https://github.com/XXX-DEV1/DevOps_PoC_1_XXX.git
+    type: clone
+  service_id: githubpublic
+
 #Deployment
 deploy:
-  schema: 
-    $ref: deploy.json
   service-category: pipeline
   parameters:
     dev-region: "{{region}}"
     dev-organization: "{{organization}}"
     dev-space: "dev"
-    app-name: "{{repo.parameters.repo_name}}"
+    app-name: "devops_poc_1_xxx_cf"
