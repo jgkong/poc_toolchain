@@ -13,7 +13,7 @@ service1:
   service_id: slack
 service2:
   parameters:
-    name: pipeline-{{name}}
+    name: "pipeline-{{name}}"
     ui-pipeline: true
     configuration:
       content: $file(pipeline.yml)
