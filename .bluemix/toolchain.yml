@@ -34,8 +34,6 @@ service4:
     label: changeme
     username: changeme
   service_id: saucelabs
-service5:
-  service_id: orion
 service6:
   parameters:
     api_key: "changeme"
