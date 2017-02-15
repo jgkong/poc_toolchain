@@ -2,10 +2,9 @@
 stages:
 - name: Build Project
   inputs:
-  - url: https://github.com/XXX-DEV1/DevOps_PoC_1_XXX.git
-    type: git
+  - type: git
     branch: master
-    dir_name: null
+    service: ${REPO}
   jobs:
   - name: Build Project
     type: builder
