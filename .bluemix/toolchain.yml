@@ -18,6 +18,7 @@ service2:
     configuration:
       content: $file(pipeline.yml)
       env:
+        REPO: "service7"
         CF_APP: "{{deploy.parameters.app-name}}"
         CF_SPACE: "{{deploy.parameters.dev-space}}"
         CF_ORGANIZATION: "{{deploy.parameters.dev-organization}}"
@@ -52,8 +53,8 @@ service7:
     label: DevOps_PoC_1_XXX
     owner_id: XXX-DEV1
     repo_name: DevOps_PoC_1_XXX
-    repo_url: https://github.com/XXX-DEV1/DevOps_PoC_1_XXX.git
-    type: clone
+    repo_url: https://github.com/jgkong/spring-petclinic
+    type: link
   service_id: githubpublic
 
 #Deployment
