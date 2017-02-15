@@ -3,6 +3,7 @@ description: "This toolchain include tools for PoC"
 name: DevOps_PoC_1_XXX
 service0:
   service_id: draservicebroker
+  parameters:
 service1:
   parameters:
     api_token: 'https://hooks.slack.com/services/ABCDE'
