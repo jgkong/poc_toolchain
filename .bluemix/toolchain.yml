@@ -1,6 +1,8 @@
 version: 0.6
 description: "This toolchain include tools for PoC"
 name: DevOps_PoC_1_XXX
+required:
+ - deploy
 service0:
   service_id: draservicebroker
 service1:
